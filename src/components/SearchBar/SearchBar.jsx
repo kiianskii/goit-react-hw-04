@@ -9,7 +9,7 @@ function SearchBar({ onSearchQuerry }) {
     }
 
     function onSubmit(data, options) {
-        onSearchQuerry(data.querry)
+        onSearchQuerry(data.querry.toLowerCase())
 
         options.resetForm()
     }

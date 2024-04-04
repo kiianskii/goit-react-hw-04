@@ -27,6 +27,7 @@ function App() {
 
   function onSearchQuerry(querry) {
     setSearchQuerry(querry)
+    setItems([])
   }
 
   function onLoadMore() {
