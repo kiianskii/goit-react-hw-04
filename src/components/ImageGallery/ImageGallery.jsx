@@ -1,11 +1,12 @@
 import ImageCard from "../ImageCard/ImageCard"
 import s from "./ImageGallery.module.css"
 
-function ImageGallery({ images }) {
+
+function ImageGallery({ images, openModal }) {
   return (
     <ul className={s.list}>
           {images.map(img => {
-              return <ImageCard img={img} key={img.id}/>
+              return <ImageCard img={img} key={img.id} openModal={openModal} />
           })}
     </ul>
   )

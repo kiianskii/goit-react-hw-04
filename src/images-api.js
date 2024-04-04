@@ -8,6 +8,7 @@ export async function fetchImages (query, page) {
      client_id: "8wxwxeNmBv7f4TvJEjl9jaYKYjjJJMYWj1Vt9qVnfro",  
         query,
         page,
+        per_page: 9,
     };
     const response = await axios.get("search/photos", { params })
     return response.data

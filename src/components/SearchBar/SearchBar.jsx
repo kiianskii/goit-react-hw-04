@@ -2,23 +2,26 @@ import { Formik, Form, Field } from "formik"
 import s from "./SearchBar.module.css"
 
 
-function SearchBar({ onSearchQuerry }) {
+
+
+function SearchBar({ onSearchQuery, setPage, notify }) {
     
     const initialValues = {
-        querry: ''
+        query: ''
     }
 
     function onSubmit(data, options) {
-        onSearchQuerry(data.querry.toLowerCase())
-
+        if (!data.query) { notify() }
+        setPage(1)
+        onSearchQuery(data.query)
         options.resetForm()
     }
   return (
-      <header className={s.header}>
+      <header>
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
-        <Form>
-        <Field type="text" placeholder="Search images and photos" name="querry"/>
-        <button type="submit">Search</button>
+        <Form className={s.header}>
+        <Field type="text" placeholder="Search images and photos" name="query"/>
+        <button className={s.btn} type="submit">Search</button>
         </Form>
     </Formik>
     </header>
