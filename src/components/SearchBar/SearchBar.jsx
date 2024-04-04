@@ -1,4 +1,5 @@
 import { Formik, Form, Field } from "formik"
+import s from "./SearchBar.module.css"
 
 
 function SearchBar({ onSearchQuerry }) {
@@ -13,7 +14,7 @@ function SearchBar({ onSearchQuerry }) {
         options.resetForm()
     }
   return (
-      <header>
+      <header className={s.header}>
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
         <Form>
         <Field type="text" placeholder="Search images and photos" name="querry"/>

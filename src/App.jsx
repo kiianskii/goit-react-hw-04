@@ -36,8 +36,8 @@ function App() {
   return (
     <>
       <SearchBar onSearchQuerry={onSearchQuerry} />
-      <ImageGallery images={items} />
-      <LoadMoreBtn onLoadMore={onLoadMore} />
+      {totalItems !==0 && <ImageGallery images={items} />}
+      {totalItems !==0 && <LoadMoreBtn onLoadMore={onLoadMore} />}
     </>
   )
 }
