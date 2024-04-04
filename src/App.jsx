@@ -22,8 +22,8 @@ function App() {
   useEffect(() => {
     const getData = async () => {
       setError(false);
-      setLoading(true)
       try {
+
         const data = await fetchImages(searchQuery, page)
         setItems([...items, ...data.results])
         setTotalItems(data.total)
@@ -37,9 +37,9 @@ function App() {
   },[searchQuery, page])
 
   function onSearchQuery(querry) {
-    // setLoading(true)
     setSearchQuery(querry)
     setItems([])
+    setLoading(true)
   }
 
   function onLoadMore() {
